@@ -45,3 +45,9 @@ console.log(nameLengths);
 // Sorting
 provinces.sort();
 console.log(provinces);
+
+// Filtering Cape
+const provincesWithoutCape = provinces.filter(
+  (province) => !province.includes("Cape")
+);
+console.log(provincesWithoutCape.length);
