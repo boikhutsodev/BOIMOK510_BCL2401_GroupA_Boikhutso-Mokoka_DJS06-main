@@ -67,3 +67,6 @@ console.log(nameProvinceMap);
 
 // Log Products
 console.log(products.map((product) => product.product).join(", ")); // Join product names with comma
+
+// Filter by Name Length:
+console.log(products.filter((product) => product.product.length <= 5));
