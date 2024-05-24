@@ -89,3 +89,6 @@ const totalPrice = productsWithNumericPrices.reduce((acc, item) => {
 }, 0);
 
 console.log(`Total Price: ${totalPrice}`);
+
+// Concatenate Product Names:
+console.log(products.reduce((acc, product) => acc + product.product, "")); // Concatenate product names
