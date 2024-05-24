@@ -70,3 +70,22 @@ console.log(products.map((product) => product.product).join(", ")); // Join prod
 
 // Filter by Name Length:
 console.log(products.filter((product) => product.product.length <= 5));
+
+// Price Manipulation:
+// Filter out products without valid prices
+const validProducts = products.filter((item) => {
+  const price = item.price;
+  return price !== "" && price !== " " && !isNaN(price);
+});
+
+// Convert string prices to numbers
+const productsWithNumericPrices = validProducts.map((item) => {
+  return { ...item, price: Number(item.price) };
+});
+
+// Calculate the total price using reduce
+const totalPrice = productsWithNumericPrices.reduce((acc, item) => {
+  return acc + item.price;
+}, 0);
+
+console.log(`Total Price: ${totalPrice}`);
