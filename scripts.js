@@ -92,3 +92,18 @@ console.log(`Total Price: ${totalPrice}`);
 
 // Concatenate Product Names:
 console.log(products.reduce((acc, product) => acc + product.product, "")); // Concatenate product names
+
+// Find Extremes in Prices:
+const priceExtremes = products.reduce((acc, product) => {
+  const price = parseInt(product.price);
+  if (!acc.highest || price > acc.highest) {
+    acc.highest = price;
+  }
+  if (!acc.lowest || price < acc.lowest) {
+    acc.lowest = price;
+  }
+  return acc;
+}, {});
+console.log(
+  `Highest: ${priceExtremes.highest} Lowest: ${priceExtremes.lowest}`
+);
