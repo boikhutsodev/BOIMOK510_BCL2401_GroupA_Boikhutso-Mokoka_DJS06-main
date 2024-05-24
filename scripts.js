@@ -64,3 +64,6 @@ const nameProvinceMap = names.reduce((acc, name, index) => {
   return acc;
 }, {});
 console.log(nameProvinceMap);
+
+// Log Products
+console.log(products.map((product) => product.product).join(", ")); // Join product names with comma
